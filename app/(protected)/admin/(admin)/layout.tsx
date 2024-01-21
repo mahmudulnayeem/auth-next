@@ -1,18 +1,16 @@
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 
-const Settings = async () => {
+const PathologyLayout = async ({ children }: { children: React.ReactNode }) => {
   const session = await auth();
-  if (session?.user?.role === "ADMIN") {
-    redirect("/admin");
+  if (session?.user?.role === "PATHOLOGY") {
+    redirect("/pathology");
   } else if (session?.user?.role === "USER") {
     redirect("/patient");
   } else if (session?.user?.role === "DOCTOR") {
     redirect("/doctor");
-  } else if (session?.user?.role === "PATHOLOGY") {
-    redirect("/pathology");
   }
-  return <div></div>;
+  return <div>{children}</div>;
 };
 
-export default Settings;
+export default PathologyLayout;

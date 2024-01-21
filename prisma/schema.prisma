@@ -12,6 +12,8 @@ generator client {
 enum UserRole {
     USER
     ADMIN
+    DOCTOR
+    PATHOLOGY
 }
 
 model User {
