@@ -80,7 +80,7 @@ model twoFactorConfirmation {
 }
 
 model Doctor {
-    id            String @id @default(cuid())
+    id           String   @id @default(cuid())
     firstName     String
     lastName      String
     qualification String
@@ -95,14 +95,12 @@ model Pahtology {
 }
 
 model Report {
-    id          String    @id @default(cuid())
-    patient     User      @relation(fields: [userId], references: [id])
-    doctor      Doctor    @relation(fields: [doctorId], references: [id])
-    pathology   Pahtology @relation(fields: [pathologyId], references: [id])
-    date        DateTime
-    result      String
-    Comments    String
-    patientId   String
-    doctorId    String
-    pathologyId String
+    id          String @id @default(cuid())
+    testName    String
+    description String?
+    price       Float
+    refferedBy  String?
+    patientId   String?
+    reportDate  DateTime?
+    doctorId    String?
 }
