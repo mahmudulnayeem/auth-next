@@ -1,40 +1,12 @@
-"use client";
+import { NavbarRoutes } from "@/components/navbar-routes";
 
-import UserButton from "@/components/auth/user-btn";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { MobileSidebar } from "./mobile-sidebar";
 
-const NavBar = () => {
-  const pathname = usePathname();
+export const Navbar = () => {
   return (
-    <nav className="bg-secondary flex justify-between items-center p-4 rounded-xl w-[600px] shadow-sm">
-      <div className="flex gap-x-2">
-        <Button
-          asChild
-          variant={pathname === "/server" ? "default" : "outline"}
-        >
-          <Link href="/server">Server</Link>
-        </Button>
-        <Button
-          asChild
-          variant={pathname === "/client" ? "default" : "outline"}
-        >
-          <Link href="/client">Client</Link>
-        </Button>
-        <Button
-          asChild
-          variant={pathname === "/settings" ? "default" : "outline"}
-        >
-          <Link href="/settings">Settings</Link>
-        </Button>
-        <Button asChild variant={pathname === "/admin" ? "default" : "outline"}>
-          <Link href="/admin">Admin</Link>
-        </Button>
-      </div>
-      <UserButton />
-    </nav>
+    <div className="p-4 border-b h-full flex items-center bg-white shadow-sm">
+      <MobileSidebar />
+      <NavbarRoutes />
+    </div>
   );
 };
-
-export default NavBar;
