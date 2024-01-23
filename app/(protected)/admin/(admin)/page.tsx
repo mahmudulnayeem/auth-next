@@ -1,13 +1,18 @@
 import { auth } from "@/auth";
+import TaskPage from "@/components/table/page";
 import { redirect } from "next/navigation";
 
 const AdminPage = async () => {
   const session = await auth();
-  console.log(session?.user?.role);
+
   if (session?.user?.role !== "ADMIN") {
     redirect("/settings");
   }
-  return <div>AdminPage</div>;
+  return (
+    <div>
+      <TaskPage />
+    </div>
+  );
 };
 
 export default AdminPage;
