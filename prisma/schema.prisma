@@ -27,7 +27,10 @@ model User {
     accounts              Account[]
     isTwoFactorEnabled    Boolean                @default(false)
     twoFactorConfirmation twoFactorConfirmation?
-    designation          String?
+    designation           String?
+    address               String?
+    gender                String?
+    lastDuty              String?
 }
 
 model Account {
@@ -82,7 +85,6 @@ model twoFactorConfirmation {
     user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-
 model Pahtology {
     id          String @id @default(cuid())
     testName    String
@@ -92,7 +94,7 @@ model Pahtology {
 }
 
 model Report {
-    id          String @id @default(cuid())
+    id          String    @id @default(cuid())
     testName    String
     description String?
     price       Float
