@@ -40,7 +40,6 @@ const DoctorsTable = async () => {
             </tr>
           </thead>
           <tbody>
-            ``
             {doctors?.map((DC, index) => (
               <tr key={index}>
                 <th className="text-xl text-gray-400" key={DC.id}>

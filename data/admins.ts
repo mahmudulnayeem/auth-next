@@ -1,3 +1,4 @@
+"use server";
 import { db } from "@/lib/db";
 export const addNewDoctor = async (doctor: any) => {
   try {
@@ -9,6 +10,7 @@ export const addNewDoctor = async (doctor: any) => {
     });
     return newDoctor;
   } catch (error) {
+    console.log(error);
     return null;
   }
 };
