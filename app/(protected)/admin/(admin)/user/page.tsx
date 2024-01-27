@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { BsPersonFillAdd } from "react-icons/bs";
 import { toast } from "sonner";
-import Register from "./_Register";
+
 
 const UserTable = () => {
   const [user, setUser] = useState([]);
