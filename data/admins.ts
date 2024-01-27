@@ -40,3 +40,18 @@ export const deleteDoctor = async (id: any) => {
     return null;
   }
 };
+
+export const addNewPathologist = async (pathology: any) => {
+  try {
+    const newPathology = await db.user.create({
+      data: {
+        ...pathology,
+        role: "PATHOLOGY",
+      },
+    });
+    return newPathology;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
