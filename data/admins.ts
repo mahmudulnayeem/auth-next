@@ -14,12 +14,50 @@ export const addNewDoctor = async (doctor: any) => {
     return null;
   }
 };
+export const addNewPathology = async (pathology: any) => {
+  try {
+    const newPathology = await db.user.create({
+      data: {
+        ...pathology,
+        role: "PATHOLOGY",
+      },
+    });
+    return newPathology;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
 
 export const getAllDoctors = async () => {
   try {
     const allDoctors = await db.user.findMany({
       where: {
         role: "DOCTOR",
+      },
+    });
+    return allDoctors;
+  } catch (error) {
+    return null;
+  }
+};
+export const getAllPathology = async () => {
+  try {
+    const allDoctors = await db.user.findMany({
+      where: {
+        role: "PATHOLOGY",
+      },
+    });
+    return allDoctors;
+  } catch (error) {
+    return null;
+  }
+};
+export const getAllUser = async () => {
+  try {
+    const allDoctors = await db.user.findMany({
+      where: {
+        role: "USER",
       },
     });
     return allDoctors;
