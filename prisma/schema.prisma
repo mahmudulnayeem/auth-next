@@ -27,6 +27,7 @@ model User {
     accounts              Account[]
     isTwoFactorEnabled    Boolean                @default(false)
     twoFactorConfirmation twoFactorConfirmation?
+    designation          String?
 }
 
 model Account {
