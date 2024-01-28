@@ -1,6 +1,5 @@
 "use client"
-
-import { deleteDoctor, getAllDoctors } from "@/data/admins";
+import { deleteDoctor,  getAllPathology } from "@/data/admins";
 import { invalidPath } from "@/lib/invalid";
 import { DeleteIcon } from "lucide-react";
 import Image from "next/image";
@@ -9,8 +8,8 @@ import { BsPersonFillAdd } from "react-icons/bs";
 import { toast } from "sonner";
 import Register from "./_Register";
 
-const DoctorsTable = () => {
-  const [doctors, setDoctors] = useState([]);
+const PdathologyTable = () => {
+  const [pathology, setPathology] = useState([]);
   const [changed, setChanged] = useState(false);
   const imgLink = "https://th.bing.com/th/id/OIP.mA0mCf1m-DLkt_PV3cjUbQHaM4?w=189&h=329&c=7&r=0&o=5&dpr=1.3&pid=1.7";
 
@@ -19,36 +18,36 @@ const DoctorsTable = () => {
     let userChoice = confirm("Are you sure you want to delete this account?");
     if (userChoice === true) {
       deleteDoctor(id).then(() => {
-        // invalidPath('/admin/doctors')
         setChanged(!changed)
-        toast("Doctor added successfully");
+        toast("PETHOLOGY added successfully");
       }
- )
+
+      )
 
     } else {
-      toast("Doctor Deletion Canceled")
+      toast("PETHOLOGY Deletion Canceled")
     }
 
   }
   useEffect(() => {
-    getAllDoctors().then((data: any) => setDoctors(data));
+    getAllPathology().then((data: any) => setPathology(data));
   }, [changed])
   return (
     <div data-theme="light" className=" px-4">
       <div className="my-4 px-6 flex items-end justify-between py-6">
-        <h2 className="text-mix-4 text-3xl font-bold">List OF Doctors</h2>
+        <h2 className="text-mix-4 text-3xl font-bold">List OF Pathology</h2>
         <label
           htmlFor="my_modal_6"
           className="btn btn-sm btn-success flex justify-center items-center"
         >
           {" "}
-          <BsPersonFillAdd /> Add Doctors
+          <BsPersonFillAdd /> Add PATHOLOGY
         </label>
         <input type="checkbox" id="my_modal_6" className="modal-toggle" />
         <div className="modal" role="dialog">
           <div className="modal-box p-0 m-0">
             <div>
-              <Register changed={changed} setChanged={setChanged} />
+              <Register changed={changed} setChanged={setChanged}/>
             </div>
           </div>
         </div>
@@ -62,12 +61,12 @@ const DoctorsTable = () => {
               <th>Name</th>
               <th>Address</th>
               <th>Gender</th>
-              <th>Last Visit</th>
+              {/* <th>Last Report</th> */}
               <th className="text-red-500">Action</th>
             </tr>
           </thead>
           <tbody>
-            {doctors?.map((DC: any, index: any) => (
+            {pathology?.map((DC: any, index: any) => (
               <tr key={index}>
                 <th className="text-xl text-gray-400" key={DC.id}>
                   {index + 1}
@@ -96,11 +95,11 @@ const DoctorsTable = () => {
                 </td>
                 <td>{DC?.address ? DC?.address : "No Address Recorded"}</td>
                 <td> {DC?.gender ? DC?.gender : "Not Recorded"}</td>
-                <td>
+                {/* <td>
                   <h3 className="text-md">
                     {DC?.lastDuty ? DC?.lastDuty : "Not Recorded"}
                   </h3>
-                </td>
+                </td> */}
                 <td >
                   <button onClick={() => deletePermission(DC.id)} className="btn btn-sm btn-error"><DeleteIcon /></button>
                 </td>
@@ -122,4 +121,4 @@ const DoctorsTable = () => {
   );
 };
 
-export default DoctorsTable;
+export default PdathologyTable;
