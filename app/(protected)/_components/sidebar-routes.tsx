@@ -1,7 +1,6 @@
 "use client";
-import { BarChart, Layout, List, UserRound } from "lucide-react";
+import { BarChart, Layout, List, LockIcon, UserRound ,} from "lucide-react";
 import { usePathname } from "next/navigation";
-
 import { SidebarItem } from "./sidebar-item";
 
 const adminRoutes = [
@@ -19,6 +18,16 @@ const adminRoutes = [
     icon: UserRound,
     label: "Pathologies",
     href: "/admin/pathologies",
+  },
+  {
+    icon: UserRound,
+    label: "Patient",
+    href: "/admin/user",
+  },
+  {
+    icon: LockIcon ,
+    label: "Make Admin",
+    href: "/admin/makeAdmin",
   },
 ];
 
