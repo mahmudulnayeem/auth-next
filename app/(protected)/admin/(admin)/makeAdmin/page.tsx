@@ -28,7 +28,7 @@ const UserTable = () => {
 
   }
   useEffect(() => {
-    getAllUserWithOutAdmin().then((data: any) => console.log(data));
+    getAllUserWithOutAdmin().then((data: any) => setUser(data));
   }, [changed])
   return (
     <div data-theme="light" className=" px-4">
