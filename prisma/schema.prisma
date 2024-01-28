@@ -103,3 +103,21 @@ model Report {
     reportDate  DateTime?
     doctorId    String?
 }
+
+
+model Appointment{
+    id          String    @id @default(cuid())
+    name       String?
+    passport   String?
+    patientId   String?
+    doctorId    String?
+    appointmentDate        DateTime?
+    appointmentTime        DateTime?
+    status      String?  @default("pending")
+    address      String?
+    gender      String?
+    mobile      String?
+    age         String?
+    bloodGroup  String?
+    
+}
