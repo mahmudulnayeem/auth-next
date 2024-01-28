@@ -30,7 +30,9 @@ export default function Register() {
     setDesignation("");
     setImageLink("");
     setGender("");
-    toast("Doctor added successfully");
+    if (newDoctor !== null) {
+      toast("Doctor added successfully");
+    }
   };
 
   return (

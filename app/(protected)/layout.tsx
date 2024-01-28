@@ -1,10 +1,7 @@
-import { auth } from "@/auth";
 import { Navbar } from "./_components/nav-bar";
 import { Sidebar } from "./_components/sidebar";
 
 const DashboardLayout = async ({ children }: { children: React.ReactNode }) => {
-  const session = await auth();
-  console.log(session?.user?.role === "ADMIN");
   return (
     <div className="h-full">
       <div className="h-[80px] md:pl-56 fixed inset-y-0 w-full z-50">

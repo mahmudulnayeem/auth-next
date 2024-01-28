@@ -15,6 +15,11 @@ const adminRoutes = [
     label: "Doctors",
     href: "/admin/doctors",
   },
+  {
+    icon: UserRound,
+    label: "Pathologies",
+    href: "/admin/pathologies",
+  },
 ];
 
 const doctorsRoutes = [
