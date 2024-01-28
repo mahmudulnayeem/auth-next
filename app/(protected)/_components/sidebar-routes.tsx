@@ -1,5 +1,5 @@
 "use client";
-import { BarChart, Layout, List, LockIcon, UserRound ,} from "lucide-react";
+import { BarChart, Layout, List, LockIcon, UserRound ,Contact2Icon,HistoryIcon,PaperclipIcon} from "lucide-react";
 import { usePathname } from "next/navigation";
 import { SidebarItem } from "./sidebar-item";
 
@@ -33,14 +33,19 @@ const adminRoutes = [
 
 const doctorsRoutes = [
   {
-    icon: List,
-    label: "Courses",
-    href: "/teacher/courses",
+    icon: Contact2Icon,
+    label: "Appointment",
+    href: "/doctors/appointment",
   },
   {
-    icon: BarChart,
-    label: "Analytics",
-    href: "/teacher/analytics",
+    icon: HistoryIcon,
+    label: "History",
+    href: "/doctors/history",
+  },
+  {
+    icon: PaperclipIcon,
+    label: "Patient Report",
+    href: "/doctors/patientReport",
   },
 ];
 
