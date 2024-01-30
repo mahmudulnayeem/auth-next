@@ -35,17 +35,17 @@ const doctorsRoutes = [
   {
     icon: Contact2Icon,
     label: "Appointment",
-    href: "/doctors/appointment",
+    href: "/doctor/appointment",
   },
   {
     icon: HistoryIcon,
     label: "History",
-    href: "/doctors/history",
+    href: "/doctor/history",
   },
   {
     icon: PaperclipIcon,
     label: "Patient Report",
-    href: "/doctors/patientReport",
+    href: "/doctor/patientReport",
   },
 ];
 

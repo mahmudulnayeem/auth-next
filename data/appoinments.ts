@@ -44,7 +44,9 @@ export const getAppointmentById = async (id: string) => {
 export const createAppointment = async (data: any) => {
   try {
     const appointment = await db.appointment.create({
-      data,
+      data: {
+        ...data,
+      },
     });
     return appointment;
   } catch (error) {
